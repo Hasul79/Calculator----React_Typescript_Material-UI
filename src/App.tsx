@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Container , Grid , Paper , styled} from '@mui/material';
+import { Button, Container , Grid , Paper , styled} from '@mui/material';
 import { GridOperationButton } from './GridOperationButton';
+import { GridDigitButton } from './GridDigitButton copy';
 
 const OutputContainer = styled('div')(({theme}) =>({
   width: "100",
@@ -41,7 +42,68 @@ function App() {
                 selectOperation={selectOperation}
                 selectedOperation={operation} 
               />
+
+<GridOperationButton
+                operation={"C"}
+                selectOperation={selectOperation}
+                selectedOperation={operation} 
+              />
+
+<GridOperationButton
+                operation={"%"}
+                selectOperation={selectOperation}
+                selectedOperation={operation} 
+              />
+
+<GridOperationButton
+                operation={"+"}
+                selectOperation={selectOperation}
+                selectedOperation={operation} 
+              />
+
           </Grid>
+          <Grid item container>
+            <GridDigitButton digit={"7"} enterDigit={setDigit} />
+            <GridDigitButton digit={"8"} enterDigit={setDigit} />
+            <GridDigitButton digit={"9"} enterDigit={setDigit} />
+            <GridOperationButton
+                operation={"*"}
+                selectOperation={selectOperation}
+                selectedOperation={operation} 
+              />
+          </Grid>
+
+          <Grid item container>
+            <GridDigitButton digit={"4"} enterDigit={setDigit} />
+            <GridDigitButton digit={"5"} enterDigit={setDigit} />
+            <GridDigitButton digit={"6"} enterDigit={setDigit} />
+            <GridOperationButton
+                operation={"-"}
+                selectOperation={selectOperation}
+                selectedOperation={operation} 
+              />
+          </Grid>
+
+          <Grid item container>
+            <GridDigitButton digit={"1"} enterDigit={setDigit} />
+            <GridDigitButton digit={"2"} enterDigit={setDigit} />
+            <GridDigitButton digit={"3"} enterDigit={setDigit} />
+            <GridOperationButton
+                operation={"/"}
+                selectOperation={selectOperation}
+                selectedOperation={operation} 
+              />
+          </Grid>
+
+          <Grid item container>
+            <GridDigitButton digit={"0"} enterDigit={setDigit} xs={6} />
+            <GridDigitButton digit={"."} enterDigit={setDigit} />
+           <Grid item xs={3}>
+              <Button fullWidth variant="contained" >
+                =
+              </Button>
+           </Grid>
+           </Grid>
         </Grid>
       </CalculatorBase>
     </Container>
